@@ -23,6 +23,8 @@ app.use(express.json())
 
 app.post('/uploads', upload.array('documents', 3), (req, res) => {
   const files = req.files
+  console.log(PORT ,files);
+  
 
   const filesList = files.map((file) => {
     return `https://api-bank-tech-challenge-fiap.onrender.com/uploads/${file.filename}`

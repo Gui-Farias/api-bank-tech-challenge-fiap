@@ -21,10 +21,8 @@ app.use(cors())
 app.use("/uploads", express.static("./uploads"));
 app.use(express.json())
 
-app.post('/transaction/documents/uploads', upload.array('documents', 3), (req, res) => {
+app.post('/transaction/documents/upload', upload.array('documents', 3), (req, res) => {
   const files = req.files
-  
-
   const filesList = files.map((file) => {
     return `https://api-bank-tech-challenge-fiap.onrender.com/uploads/${file.filename}`
   })

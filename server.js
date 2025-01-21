@@ -21,9 +21,8 @@ app.use(cors())
 app.use("/uploads", express.static("./uploads"));
 app.use(express.json())
 
-app.post('/uploads', upload.array('documents', 3), (req, res) => {
+app.post('/transaction/documents/uploads', upload.array('documents', 3), (req, res) => {
   const files = req.files
-  console.log(PORT ,files);
   
 
   const filesList = files.map((file) => {

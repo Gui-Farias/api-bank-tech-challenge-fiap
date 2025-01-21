@@ -15,7 +15,7 @@ const storage = multer.diskStorage({
 })
 const upload = multer({ storage })
 
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 3004
 const app = express()
 app.use(cors())
 app.use("/uploads", express.static("./uploads"));
